@@ -396,15 +396,15 @@ if __name__ == "__main__":
     Bounds = [[-2.048, 2.048],[-2.048, 2.048]]
     Enteras = [False]*len(Bounds)
     f = F2
-    cant_individuos = 25
-    cant_generac = 55
+    cant_individuos = 40
+    cant_generac = 35
     cant_elite = round(cant_individuos * 0.3)
     sel = sel_ruleta
-    eps = 0.76
+    eps = 3.7
     xover = xov_uniform
-    cant_cruzados = round(0.8 * cant_individuos)
+    cant_cruzados = round(0.95 * cant_individuos)
     mut = mut_step
-    cant_mutados = round(0.15 * cant_individuos)
+    cant_mutados = round(0.23 * cant_individuos)
 
     #usar callback = None para que no grafique en cada iteracion y vaya mas rapido
     callback = callback_graficar
@@ -426,4 +426,5 @@ if __name__ == "__main__":
     graficarCaminata(f, bestSols, Bounds, 0.2, alpha=0.2, ax=ax_caminata)
     graficarEvolucionFitness(traceBest, traceAvg, ax=ax_fitness)
     plt.show()
+
 
